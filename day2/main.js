@@ -37,14 +37,10 @@ fs.readFile('day2/input.txt', 'utf-8', (err, data) => {
 
         if (ar1.join('') === ar3.join('')) {
           const common = ar1.join('');
-          console.log(
-            'match!',
-            common.substring(0, pos) + common.substring(pos + 1)
-          );
-          throw new Error('Stop');
+          const newString =
+            common.substring(0, pos) + common.substring(pos + 1);
+          console.log('MATCH', newString);
         }
-
-        //console.log('------');
       }
     });
   });
