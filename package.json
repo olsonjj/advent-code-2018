@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "day1": "node day1/main.js",
+    "day2": "nodemon day2/main.js",
+    "day3": "nodemon day3/main.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +21,11 @@
   "homepage": "https://github.com/olsonjj/advent-code-2018#readme",
   "dependencies": {
     "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  },
+  "nodemonConfig": {
+    "delay": "2000"
   }
 }

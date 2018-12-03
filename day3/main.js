@@ -16,7 +16,6 @@ fs.readFile('day3/input.txt', 'utf-8', (err, data) => {
   }
 
   lines = data.split('\n');
-  // console.log(lines);
 
   for (var i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -46,14 +45,12 @@ fs.readFile('day3/input.txt', 'utf-8', (err, data) => {
 });
 
 function fillFabric(x, y, w, h) {
-  //console.log('fill', x, y, w, h);
   const maxI = x + w;
   const maxJ = y + h;
-  //   console.log('max', maxI, maxJ);
+
   for (var i = x; i < x + w; i++) {
     for (var j = y; j < y + h; j++) {
       let currentValue = fabric[i][j];
-      //   console.log(currentValue, i, j);
       if (currentValue === '.') {
         fabric[i][j] = '1';
       } else if (currentValue === '1') {
@@ -70,7 +67,6 @@ function countFabricOverlap() {
     for (var j = 0; j < 1000; j++) {
       const val = fabric[i][j];
       if (val === 'x') {
-        //console.log('OVERLAP');
         totalFabricOverlap += 1;
       }
     }
@@ -103,8 +99,6 @@ function checkCleanPatch() {
         top: elf2.y,
         bottom: elf2.y + elf2.h - 1
       };
-      //console.log('.....');
-      //console.log(elf1, elf2);
 
       if (intersectRect(r1, r2)) {
         wasHit = true;
@@ -115,15 +109,12 @@ function checkCleanPatch() {
     if (!wasHit) {
       noHitList.push(elf1.id);
     }
-
-    // console.log('in progress --> no hit list', noHitList);
   }
 
   console.log('no hit list', noHitList);
 }
 
 function intersectRect(r1, r2) {
-  // console.log('check', r1, r2);
   return !(
     r2.left > r1.right ||
     r2.right < r1.left ||
